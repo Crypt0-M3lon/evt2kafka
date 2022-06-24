@@ -6,10 +6,16 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+threadpool = "1.0"
+clap = "3.1"
+crossbeam = "0.8"
+flate2 = "1.0.24"
+ctrlc = { version = "3.0", features = ["termination"] }
 quickxml_to_serde = "0.5.0"
 rdkafka = { version = "0.28.0" , features = ["cmake-build"] }
 rdkafka-sys = { version = "4.2.0", default-features = false, features = ["cmake-build"] }
 tokio = { version = "1.0", features = ["full"] }
+memoffset = "0.6.5"
 
 [dependencies.windows]
 version = "0.36.1"
@@ -18,6 +24,8 @@ features = [
     "Win32_Foundation",
     "Win32_System_EventLog",
     "Win32_UI_WindowsAndMessaging",
-    "Data_Xml_Dom"
+    "Data_Xml_Dom",
+    "Win32_System_Diagnostics_Etw",
+    "Win32_System_Time"
 ]
 

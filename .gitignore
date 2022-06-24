@@ -1,1 +1,5 @@
 /target
+/vector
+/docker-compose.yml
+/kafka_server_jaas.conf
+*.xml
