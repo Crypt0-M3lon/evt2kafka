@@ -208,9 +208,16 @@ fn render_event(h_event: isize, flag: u32) -> String {
 }
 
 fn render_json(xml: String) -> String {
-    let json = xml_string_to_json(xml, &Config::new_with_defaults());
-    let json_text = json.unwrap();
-    return json_text.to_string();
+    let json_result = xml_string_to_json(xml.clone(), &Config::new_with_defaults());
+    match json_result {
+        Ok(json) => {
+            return json.to_string();
+        },
+        Err(_) => {
+            println!("Error while rending XML in Json: {}", xml);
+            return "".to_string();
+        }
+    }
 } 
 
 fn init_kafka(brokers: &str, tx: Sender<String>) -> BaseProducer<CaptureErrorContext> {

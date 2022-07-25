@@ -1,0 +1,4 @@
+# Set the maximum line width to 120
+max_width = 120
+# Maximum line length for single line if-else expressions
+single_line_if_else_max_width = 40

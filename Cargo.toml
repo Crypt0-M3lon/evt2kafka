@@ -7,18 +7,16 @@ edition = "2021"
 
 [dependencies]
 threadpool = "1.0"
-clap = "3.1"
+clap = "3.2"
 crossbeam = "0.8"
 flate2 = "1.0.24"
 ctrlc = { version = "3.0", features = ["termination"] }
 quickxml_to_serde = "0.5.0"
 rdkafka = { version = "0.28.0" , features = ["cmake-build"] }
 rdkafka-sys = { version = "4.2.0", default-features = false, features = ["cmake-build"] }
-tokio = { version = "1.0", features = ["full"] }
-memoffset = "0.6.5"
 
 [dependencies.windows]
-version = "0.36.1"
+version = "0.38"
 features = [
     "alloc",
     "Win32_Foundation",
